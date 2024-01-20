@@ -118,12 +118,18 @@ func updateDoc(db *mongo.Client, doc Doc) {
 
 	filter := bson.D{{Key: "_id", Value: doc.ID}}
 	update := bson.D{{Key: "$set", Value: bson.D{
+		{Key: "name", Value: doc.Name},
+		{Key: "url", Value: doc.Url},
 		{Key: "scouted", Value: doc.Scouted},
 		{Key: "alive", Value: doc.Alive},
-		{Key: "contentype", Value: doc.ContentType},
-		{Key: "statuscode", Value: doc.StatusCode},
+		{Key: "allowed", Value: doc.Allowed},
+
+		{Key: "urlparent", Value: doc.URLParent},
 		{Key: "urlcount", Value: doc.URLCount},
+		{Key: "contenttype", Value: doc.ContentType},
+		{Key: "statuscode", Value: doc.StatusCode},
 		{Key: "data", Value: doc.Data},
+		{Key: "domain", Value: doc.Domain},
 	}}}
 
 	collection := db.Database("web-search").Collection("docs")

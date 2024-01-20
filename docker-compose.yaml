@@ -1,0 +1,11 @@
+version: "2"
+services:
+  app: 
+    container_name: "web_search_scout"
+    build: ./
+    depends_on:
+      - database
+
+  database:
+    container_name: "web_search_db"
+    image: mongo

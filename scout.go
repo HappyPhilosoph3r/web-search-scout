@@ -31,15 +31,23 @@ func main() {
 
 	fmt.Printf("Number of documents to scout: %v\n", documentCount)
 
-	if documentCount == 0 {
-		return
-	}
+	// Loop that only terminates when all documents are scouted (capped at 1 for development).
+	// This will be replaced with a webserver so that new requests can be added easily / prioritised.
 
-	// 3. For each url, look at it and collect any urls within the page.
+	for i := 0; i < 1; i++ {
+		documentCount := countDocuments(db, "docs", notScoutedFilter)
+		fmt.Printf("Number of documents to scout: %v\n", documentCount)
 
-	results := DocsToScout(db)
+		if documentCount == 0 {
+			return
+		}
 
-	for _, result := range results {
-		scoutDoc(result, db)
+		// 3. For each url, look at it and collect any urls within the page.
+
+		results := DocsToScout(db)
+
+		for _, result := range results {
+			scoutDoc(result, db)
+		}
 	}
 }

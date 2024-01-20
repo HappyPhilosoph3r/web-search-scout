@@ -1,0 +1,7 @@
+docker-compose.yaml
+Dockerfile
+.dockerignore
+
+.gitignore
+web-search-scout
+**/*.DS_Store

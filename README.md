@@ -1,6 +1,6 @@
 # Web-Search Scout
 
-This project is designed to search for webpages given a specific starting url. It is for learning and development puporses only. It is not designed for production use. 
+This project is designed to search for webpages given a specific starting url. It is for learning and development purposes only. It is not designed for production use. 
 
 ## Methods 
 

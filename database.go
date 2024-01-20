@@ -12,7 +12,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-const uri = "mongodb://localhost:27017"
+const uri = "mongodb://web_search_db"
 
 func databaseConnection() (*mongo.Client, error) {
 	// Use the SetServerAPIOptions() method to set the Stable API version to 1
